@@ -5,13 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sobre Mí — Portafolio Austin</title>
-
     <link rel="stylesheet" href="static/css/fonts.css" />
-    <link rel="stylesheet" href="static/css/sobremi.css" />
+    <link rel="stylesheet" href="static/css/sobremi.css?v=3" />
 </head>
 
 <body>
-
     <!-- Header fijo -->
     <header id="encabezado">
         <img class="titulo" src="resources/image/AustinFLix.png" alt="AustinFlix">
@@ -25,22 +23,25 @@
         </nav>
     </header>
 
-    <!-- HERO: ocupa la pantalla completa (cambia la imagen) -->
-    <section class="seccion full" style="--bg: url('resources/image/Fondo1.png');">
+    <!-- HERO -->
+    <section class="seccion full bg-img bg-fondo1">
         <div class="overlay"></div>
+        <div class="fade-top"></div>
+
         <div class="contenido centrado">
             <h1 class="tit-hero">Sobre <span>Mí</span></h1>
             <p class="sub-hero">Desarrollador — Programador — Editor Audiovisual</p>
             <a class="cta" href="#bio">Conóceme</a>
         </div>
-        <!-- degradé inferior para mezclar con la siguiente -->
+
         <div class="fade-bottom"></div>
     </section>
 
-    <!-- BIO / QUIÉN SOY -->
-    <section id="bio" class="seccion bg-img" style="--bg: url('resources/');"
-        aria-label="Biografía">
+    <!-- BIO -->
+    <section id="bio" class="seccion bg-img bg-fondo2" aria-label="Biografía">
         <div class="overlay"></div>
+        <div class="fade-top"></div>
+
         <div class="contenedor">
             <h2 class="subtitulo">Quién Soy</h2>
             <div class="bio-grid">
@@ -53,8 +54,7 @@
                     </p>
                     <p>
                         Estudio programación desde <strong>2024</strong>. Ingresé a 3° medio de programación el año
-                        pasado
-                        y este año egreso de 4° medio. Me muevo cómodo entre diseño, frontend y backend.
+                        pasado y este año egreso de 4° medio. Me muevo cómodo entre diseño, frontend y backend.
                     </p>
                 </div>
 
@@ -72,33 +72,29 @@
     </section>
 
     <!-- HABILIDADES -->
-    <section class="seccion bg-img" style="--bg: url('resources/image/sobremi/skills.jpg');" aria-label="Conocimientos">
+    <section class="seccion bg-img bg-fondo3" aria-label="Conocimientos">
         <div class="overlay"></div>
+        <div class="fade-top"></div>
+
         <div class="contenedor">
             <h2 class="subtitulo">Conocimientos</h2>
-
             <div class="skills">
-                <!-- Usa --val para el % y texto dentro del .etiqueta -->
                 <div class="barra">
                     <div class="etiqueta">HTML / CSS <span>60%</span></div>
                     <div class="track"><span class="fill" style="--val:60%"></span></div>
                 </div>
-
                 <div class="barra">
                     <div class="etiqueta">JavaScript <span>35%</span></div>
                     <div class="track"><span class="fill" style="--val:35%"></span></div>
                 </div>
-
                 <div class="barra">
                     <div class="etiqueta">Python <span>69%</span></div>
                     <div class="track"><span class="fill" style="--val:69%"></span></div>
                 </div>
-
                 <div class="barra">
                     <div class="etiqueta">MySQL / Oracle <span>73%</span></div>
                     <div class="track"><span class="fill" style="--val:73%"></span></div>
                 </div>
-
                 <div class="barra">
                     <div class="etiqueta">DaVinci Resolve / Filmora 14 <span>90%</span></div>
                     <div class="track"><span class="fill" style="--val:90%"></span></div>
@@ -108,15 +104,14 @@
         <div class="fade-bottom"></div>
     </section>
 
-    <!-- EXPERIENCIA (timeline de diseñador) -->
-    <section class="seccion bg-img" style="--bg: url('resources/image/sobremi/experience.jpg');"
-        aria-label="Experiencia">
+    <!-- EXPERIENCIA -->
+    <section class="seccion bg-img bg-fondo4" aria-label="Experiencia">
         <div class="overlay"></div>
+        <div class="fade-top"></div>
+
         <div class="contenedor">
             <h2 class="subtitulo">Experiencia Laboral</h2>
-
             <div class="timeline">
-                <!-- Item -->
                 <article class="tl-item">
                     <div class="tl-dot"></div>
                     <div class="tl-card glass">
@@ -137,17 +132,16 @@
                         </p>
                     </div>
                 </article>
-
-                <!-- Puedes duplicar tl-item para más experiencias -->
             </div>
         </div>
         <div class="fade-bottom"></div>
     </section>
 
     <!-- CERTIFICADOS -->
-    <section class="seccion bg-img" style="--bg: url('resources/image/sobremi/certificates.jpg');"
-        aria-label="Certificados">
+    <section class="seccion bg-img bg-fondo1" aria-label="Certificados">
         <div class="overlay"></div>
+        <div class="fade-top"></div>
+
         <div class="contenedor">
             <h2 class="subtitulo">Certificados y Logros</h2>
             <ul class="cert-list glass">
@@ -156,43 +150,13 @@
                 <li>Certificado en Generación y Uso de la IA</li>
             </ul>
         </div>
+
         <div class="fade-bottom"></div>
     </section>
 
-    <!-- Footer (igual estilo que index) -->
+    <!-- FOOTER -->
     <footer class="pie-netflix" id="contacto">
         <div class="contenedor-pie">
-            <div class="fila-redes centrado">
-                <a class="red" href="https://github.com/TU_USUARIO" target="_blank" rel="noopener" title="GitHub">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                            d="M12 0a12 12 0 0 0-3.8 23.4c.6.1.8-.2.8-.6v-2c-3.3.7-4-1.6-4-1.6a3.1 3.1 0 0 0-1.3-1.7c-1-.7.1-.7.1-.7a2.5 2.5 0 0 1 1.8 1.2 2.6 2.6 0 0 0 3.6 1 2.6 2.6 0 0 1 .8-1.6c-2.6-.3-5.3-1.3-5.3-5.8a4.5 4.5 0 0 1 1.2-3.1 4.2 4.2 0 0 1 .1-3s1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2a4.2 4.2 0 0 1 .1 3 4.5 4.5 0 0 1 1.2 3.1c0 4.5-2.7 5.5-5.3 5.8a2.9 2.9 0 0 1 .8 2.3v3.3c0 .3.2.6.8.5A12 12 0 0 0 12 0z" />
-                    </svg>
-                </a>
-                <a class="red"
-                    href="mailto:vicente.austin.r.h@gmail.com?subject=Contacto%20desde%20tu%20Portafolio&body=Hola%20Vicente..."
-                    title="Email">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                            d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.5l-8 5-8-5V6h16zM4 18V9l8 5 8-5v9H4z" />
-                    </svg>
-                </a>
-            </div>
-
-            <nav class="enlaces-pie centrado" aria-label="Enlaces del sitio">
-                <ul class="columna">
-                    <li><a href="index.html#inicio">Inicio</a></li>
-                    <li><a href="index.html#proyectos">Proyectos</a></li>
-                    <li><a href="sobremi.html">Sobre mí</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-                <ul class="columna">
-                    <li><a href="resources/image/ACurriculum.png" download="CV_VicenteAustin.png">Currículum</a></li>
-                    <li><a href="https://github.com/TU_USUARIO" target="_blank" rel="noopener">GitHub</a></li>
-                    <li><a href="mailto:vicente.austin.r.h@gmail.com">Correo</a></li>
-                </ul>
-            </nav>
-
             <div class="marca-pie centrado">
                 © <span id="anio-actual"></span> Austin • Portafolio Profesional
             </div>

@@ -16,8 +16,6 @@
     --acento: #e50914;
 }
 
-
-
 html,
 body {
     height: 100%;
@@ -78,7 +76,7 @@ body {
     width: 100%;
 }
 
-/* ===== Secciones con fondo imagen y degradés entre ellas ===== */
+/* ===== Secciones con fondo y degradés ===== */
 .seccion {
     position: relative;
     min-height: 80vh;
@@ -90,28 +88,60 @@ body {
     min-height: 100vh;
 }
 
+/* Fondo por clase + parallax suave */
 .seccion.bg-img {
-    background-image: var(--bg);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
-    /* efecto sutil parallax */
+    transition: background 1.4s ease-in-out;
 }
 
+/* Overlay sutil para mejorar legibilidad del texto */
 .seccion .overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, rgba(0, 0, 0, .55), rgba(0, 0, 0, .6));
+    z-index: 1;
 }
 
+/* Degradados superior e inferior para transición suave entre imágenes */
+.fade-top,
 .fade-bottom {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -1px;
     height: 180px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), var(--negro));
     pointer-events: none;
+    z-index: 2;
+}
+
+.fade-top {
+    top: -1px;
+    background: linear-gradient(to top, rgba(61, 0, 0, 0), #0f0000 90%);
+}
+
+.fade-bottom {
+    bottom: -1px;
+    background: linear-gradient(to bottom, rgba(61, 0, 0, 0), #0f0000 90%);
+}
+
+/* === FONDOS (ruta relativa: static/css/ -> ../../resources/image/) === */
+/* Cambia .jpg por .png si tus archivos son PNG */
+.bg-fondo1 {
+    background-image: url("/resources/image/Fondo1.png");
+}
+
+.bg-fondo2 {
+    background-image: url("/resources/image/Fondo2.png");
+}
+
+.bg-fondo3 {
+    background-image: url("/resources/image/Fondo3.png");
+}
+
+.bg-fondo4 {
+    background-image: url("/resources/image/Fondo4.png");
 }
 
 /* ===== Contenido centrado (hero) ===== */
@@ -185,7 +215,7 @@ body {
     }
 }
 
-/* ===== Contenedor general de secciones ===== */
+/* ===== Contenedor y subtítulos ===== */
 .contenedor {
     position: relative;
     z-index: 5;
@@ -230,7 +260,7 @@ body {
 }
 
 .bio-card {
-    padding: 1.2rem 1.2rem;
+    padding: 1.2rem;
     line-height: 1.7;
     color: #e9e9e9;
 }
@@ -316,7 +346,7 @@ body {
     }
 }
 
-/* ===== TIMELINE (Experiencia) ===== */
+/* ===== TIMELINE ===== */
 .timeline {
     position: relative;
     margin-top: 1.6rem;
@@ -352,7 +382,7 @@ body {
 
 .tl-card {
     margin-left: 2.4rem;
-    padding: 1.1rem 1.1rem 1.1rem 1.1rem;
+    padding: 1.1rem;
     border-left: 4px solid var(--acento);
 }
 
@@ -415,7 +445,7 @@ body {
     opacity: .9;
 }
 
-/* ===== Footer (copiado del estilo de index) ===== */
+/* ===== Footer ===== */
 .pie-netflix {
     background: #141414;
     border-top: 1px solid #2a2a2a;
@@ -490,7 +520,7 @@ body {
 }
 
 /* ===== Responsivo ===== */
-@media (max-width: 980px) {
+@media (max-width:980px) {
     .bio-grid {
         grid-template-columns: 1fr;
     }
@@ -502,7 +532,7 @@ body {
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width:760px) {
     #encabezado {
         padding: .9rem 1.2rem;
     }
