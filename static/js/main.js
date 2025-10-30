@@ -61,3 +61,51 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
+// === Tarjetas clickeables con accesibilidad ===
+(function () {
+  const tarjetas = document.querySelectorAll('.tarjeta[data-link]');
+  if (!tarjetas.length) return;
+
+  tarjetas.forEach(card => {
+    const url = card.getAttribute('data-link');
+    if (!url) return;
+
+    // Estilos de interacción
+    card.style.cursor = 'pointer';
+    card.setAttribute('role', 'link');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', card.querySelector('h3')?.textContent?.trim() || 'Abrir proyecto');
+
+    const open = () => {
+      const blank = card.getAttribute('data-blank') === 'true';
+      if (blank) {
+        window.open(url, '_blank', 'noopener');
+      } else {
+        window.location.href = url;
+      }
+    };
+
+    card.addEventListener('click', (e) => {
+      // Evita que un <a> interno (si lo agregas en el futuro) duplique navegación
+      if (e.target.closest('a')) return;
+      open();
+    });
+
+    card.addEventListener('keydown', (e) => {
+      // Enter o Space → activar
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        open();
+      }
+    });
+  });
+})();
+
+// === Redirección de botones ===
+document.getElementById('btn-reproducir').addEventListener('click', () => {
+  window.open('https://austintropa.github.io/Proyecto-Orion/', '_blank'); // abre en nueva pestaña
+});
+
+document.getElementById('btn-info').addEventListener('click', () => {
+  window.open('https://github.com/austintropa/Proyecto-Orion.git', '_blank');
+});
