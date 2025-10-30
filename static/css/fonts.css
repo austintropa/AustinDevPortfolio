@@ -1,0 +1,51 @@
+/* ======================================================
+   Fuentes locales
+   ====================================================== */
+
+@font-face {
+  font-family: "Bebas";
+  src: url("/resources/fonts/Bebas-Regular.ttf") format("truetype");
+  font-weight: 400;           /* el archivo es "Regular" */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LemonMilk";
+  src: url("/resources/fonts/LEMONMILK-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Azonix";
+  src: url("/resources/fonts/Azonix.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Designer";
+  src: url("/resources/fonts/Designer.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MONARK";
+  src: url("/resources/fonts/MONARK.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+    font-family: "Lamoric";
+    src: url("/resources/fonts/Lamoric\ Rowen\ TTF.ttf") format("truetype");
+    font-weight: 400;
+    font-size: normal;
+    flex-direction: swap;
+}

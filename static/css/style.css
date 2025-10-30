@@ -1,0 +1,535 @@
+@import url("/static/css/fonts.css");
+
+/* ===============================
+   Base
+   =============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fondo: #141414;
+    --texto: #ffffff;
+    --texto-sec: #dddddd;
+    --acento: #e50914;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    color: var(--texto);
+    background: var(--fondo);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ===============================
+   Encabezado y navegación
+   =============================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 2.6rem;
+    padding: 1.2rem 3.7rem;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .85), rgba(0, 0, 0, 0));
+    background-color: transparent;
+    transition: background-color .28s ease, background-image .28s ease, box-shadow .28s ease;
+}
+
+header.nav-solido {
+    background-image: linear-gradient(to bottom, #060606 0%, #131313 100%);
+    background-color: #131313;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .45);
+}
+
+.titulo {
+    width: 6rem;
+    height: auto;
+}
+
+.navegacion {
+    display: flex;
+    gap: 1.1rem;
+    list-style: none;
+}
+
+.navegacion a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 13px;
+    transition: color .25s ease;
+}
+
+.navegacion a:hover {
+    color: #b6b6b6;
+}
+
+.navegacion a.activo {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* ===============================
+   Hero principal
+   =============================== */
+.seccion-principal {
+    position: relative;
+    min-height: 90vh;
+    background-image: url(/resources/image/Logo\ Fondo.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 4rem 4rem 5rem;
+    scroll-margin-top: 80px;
+}
+
+.seccion-principal::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 180px;
+    pointer-events: none;
+    background: linear-gradient(to top, #141414, transparent);
+}
+
+.contenido-principal {
+    max-width: 720px;
+}
+
+.contenido-principal h2 {
+    font-family: "LemonMilk", sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    text-transform: uppercase;
+}
+
+.contenido-principal h2 span {
+    color: #dd5100;
+}
+
+.contenido-principal p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: var(--texto-sec);
+    font-weight: 500;
+}
+
+.top-1 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.top-1 h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+#icono-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e50914;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    box-shadow: #000 0px 0px 8rem;
+}
+
+#icono-top p {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+#icono-top span {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-top: -0.4rem;
+}
+
+.botones {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.boton {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.boton-reproducir {
+    background: #ffffff;
+    color: #000000;
+    z-index: 999;
+    font-weight: bolder;
+}
+
+.boton-reproducir:hover {
+    background: #d9d9d9;
+}
+
+.boton-info {
+    background: rgba(109, 109, 110, 0.349);
+    color: #fff;
+    z-index: 999;
+    font-weight: bolder;
+}
+
+.boton-info:hover {
+    background: rgba(109, 109, 110, 0.171);
+}
+
+/* ===============================
+   Sección de proyectos
+   =============================== */
+.seccion-proyectos {
+    background: #141414;
+    padding: 2.2rem clamp(1rem, 3vw, 3rem);
+}
+
+.fila-proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    position: relative;
+    z-index: 1;
+}
+
+/* Tarjeta grande con imagen de fondo */
+.tarjeta {
+    position: relative;
+    width: clamp(220px, 22vw, 360px);
+    aspect-ratio: 16 / 9;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #0f0f0f;
+    transform-origin: center bottom;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    z-index: 0;
+    transition-delay: 0s;
+}
+
+/* Al pasar el mouse, sombra leve pero visible */
+.tarjeta:hover {
+    transform: scale(1.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    /* leve pero notoria */
+    z-index: 10;
+    transition-delay: 0.4s;
+}
+
+
+/* Imagen de fondo */
+.tarjeta img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform 0.35s ease, filter 0.35s ease, opacity 0.25s ease;
+    will-change: transform, filter, opacity;
+}
+
+/* Zoom leve en hover */
+.tarjeta:hover img {
+    transform: scale(1.04);
+    filter: saturate(1.05) brightness(0.95);
+    transition-delay: 0.4s;
+}
+
+/* Degradado para lectura */
+.tarjeta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.15) 55%, rgba(0, 0, 0, 0));
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    z-index: 1;
+}
+
+.tarjeta:hover::before,
+.tarjeta:focus-within::before {
+    opacity: 1;
+}
+
+/* Información dentro */
+.info-tarjeta {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.info-tarjeta h3 {
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+    color: #fff;
+}
+
+.info-tarjeta p {
+    font-size: clamp(0.86rem, 1.2vw, 0.95rem);
+    color: #ddd;
+}
+
+/* Revelado solo por opacidad */
+.tarjeta:hover .info-tarjeta,
+.tarjeta:focus-within .info-tarjeta {
+    opacity: 1;
+    transition-delay: 0.4s;
+}
+
+/* Accesibilidad teclado */
+.tarjeta {
+    outline: none;
+}
+
+.tarjeta:focus-within {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12) inset;
+}
+
+/* ===============================
+   Responsivo
+   =============================== */
+@media (max-width: 1200px) {
+    .fila-proyectos {
+        justify-content: center;
+    }
+
+    .tarjeta {
+        width: clamp(280px, 42vw, 380px);
+    }
+}
+
+@media (max-width: 768px) {
+    .seccion-principal {
+        padding: 3.5rem 1.2rem 4rem;
+    }
+
+    header {
+        padding: 1rem 1.2rem;
+        gap: 1.2rem;
+    }
+
+    .tarjeta {
+        width: 100%;
+        max-width: 560px;
+    }
+}
+
+/* ===============================
+   📐 Filas perfectamente ordenadas (5/4/3/2 columnas)
+   =============================== */
+
+/* Título de cada categoría (lo mantenemos) */
+.titulo-fila {
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    font-weight: 700;
+    margin: 3rem 0 1.5rem;
+    color: #fff;
+    font-family: "LemonMilk", sans-serif;
+    letter-spacing: .5px;
+    padding-left: .5rem;
+    position: relative;
+}
+
+.titulo-fila::after {
+    content: "";
+    position: absolute;
+    bottom: -.4rem;
+    left: 0;
+    width: 5rem;
+    height: 3px;
+    background: var(--acento);
+    border-radius: 5px;
+}
+
+/* Grid fijo por breakpoints: 5 → 4 → 3 → 2 */
+.fila-proyectos {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    /* ~3rem entre columnas y filas */
+    align-items: stretch;
+    justify-items: stretch;
+    margin-bottom: 2rem;
+}
+
+/* Las tarjetas ocupan toda su celda del grid */
+.fila-proyectos .tarjeta {
+    width: 100% !important;
+    /* anula el ancho fijo previo */
+    max-width: none;
+}
+
+/* Mantén el alto tipo póster */
+.fila-proyectos .tarjeta {
+    aspect-ratio: 16/9;
+}
+
+/* Breakpoints */
+@media (max-width: 1400px) {
+    .fila-proyectos {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1100px) {
+    .fila-proyectos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .fila-proyectos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Detalle: evita que el alt-text “salte” cuando una imagen no carga */
+.fila-proyectos .tarjeta img {
+    display: block;
+    background: #222;
+}
+
+
+/* ===== Forzar fuente distinta por ID (corrige el typo) ===== */
+#titulo-1 {
+    font-family: "Lamoric", sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+}
+
+#titulo-2 {
+    font-family: "Designer", sans-serif;
+    letter-spacing: 0.2rem;
+}
+
+#titulo-3 {
+    font-family: "MONARK", sans-serif;
+    letter-spacing: 0.05rem;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+/* ===============================
+   🦶 Footer centrado estilo Netflix
+   =============================== */
+.pie-netflix {
+    background: #141414;
+    border-top: 1px solid #2a2a2a;
+    padding: 2.4rem 0 3rem;
+    color: #a3a3a3;
+    text-align: center;
+}
+
+.contenedor-pie {
+    width: 92%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Centrado general */
+.centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/* Redes sociales centradas */
+.fila-redes {
+    gap: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+
+.red {
+    display: inline-flex;
+}
+
+.red svg {
+    width: 26px;
+    height: 26px;
+    fill: #a3a3a3;
+    transition: fill 0.2s ease, transform 0.2s ease;
+}
+
+.red:hover svg {
+    fill: #ffffff;
+    transform: scale(1.12);
+}
+
+/* Enlaces centrados */
+.enlaces-pie {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-bottom: 1.6rem;
+}
+
+.enlaces-pie .columna {
+    list-style: none;
+    padding: 0;
+}
+
+.enlaces-pie a {
+    color: #a3a3a3;
+    text-decoration: none;
+    font-size: 0.92rem;
+    line-height: 1.9;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.enlaces-pie a:hover {
+    color: #e6e6e6;
+    text-decoration: underline;
+}
+
+/* Marca / derechos */
+.marca-pie {
+    font-size: 0.9rem;
+    color: #8c8c8c;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .fila-redes {
+        gap: 1.2rem;
+    }
+
+    .enlaces-pie {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+}
