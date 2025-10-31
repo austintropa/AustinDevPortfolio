@@ -81,6 +81,51 @@ header.nav-solido {
 }
 
 /* ===============================
+   Imagen del header animada
+   =============================== */
+.contenedor-foto {
+    margin-left: auto;
+    position: relative;
+}
+
+.foto-header {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid var(--acento);
+    object-fit: cover;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    animation: flotar 4s ease-in-out infinite;
+}
+
+.foto-header:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 25px rgba(229, 9, 20, 0.8);
+    filter: brightness(1.1);
+}
+
+/* 🔹 Animación sutil de movimiento */
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+/* 🔹 Adaptación responsive */
+@media (max-width: 768px) {
+    .foto-header {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+
+/* ===============================
    Hero principal
    =============================== */
 .seccion-principal {
