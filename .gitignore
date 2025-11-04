@@ -1,0 +1,78 @@
+# ============================================
+# 🧩 CONFIGURACIÓN BASE — AustinFlix Portafolio
+# ============================================
+
+# Archivos del sistema (Windows / macOS)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================
+# 🧱 CACHÉS Y TEMPORALES
+# ============================================
+
+# Archivos temporales de editores
+*.log
+*.tmp
+*.swp
+*.bak
+*.old
+
+# Carpeta de caché de navegadores o builds
+.cache/
+dist/
+build/
+temp/
+__pycache__/
+*.pyc
+
+# ============================================
+# 🎨 RECURSOS MULTIMEDIA PESADOS (opcional)
+# ============================================
+# Si tu repositorio usa imágenes grandes o videos locales,
+# puedes excluir copias RAW o proyectos de edición.
+
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.psd
+*.xcf
+*.blend
+*.zip
+*.rar
+
+# ============================================
+# ⚙️ ENTORNOS DE DESARROLLO
+# ============================================
+
+# VS Code
+.vscode/
+.history/
+
+# JetBrains / PyCharm
+.idea/
+
+# ============================================
+# 🐍 PYTHON (por si más adelante integras Flask)
+# ============================================
+venv/
+env/
+*.env
+.env.*
+
+# ============================================
+# 📦 NODE (por si usas npm o Vite más adelante)
+# ============================================
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# ============================================
+# 🚀 DEPLOY O GENERADOS AUTOMÁTICAMENTE
+# ============================================
+# Archivos generados para GitHub Pages o builds automáticos
+*.out
+*.map
+*.min.css
+*.min.js
