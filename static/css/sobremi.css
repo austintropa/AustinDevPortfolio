@@ -129,19 +129,19 @@ body {
 /* === FONDOS (ruta relativa: static/css/ -> ../../resources/image/) === */
 /* Cambia .jpg por .png si tus archivos son PNG */
 .bg-fondo1 {
-    background-image: url("/resources/image/Fondo1.png");
+    background-image: url("resources/image/Fondo1.png");
 }
 
 .bg-fondo2 {
-    background-image: url("/resources/image/Fondo2.png");
+    background-image: url("resources/image/Fondo2.png");
 }
 
 .bg-fondo3 {
-    background-image: url("/resources/image/Fondo3.png");
+    background-image: url("resources/image/Fondo3.png");
 }
 
 .bg-fondo4 {
-    background-image: url("/resources/image/Fondo4.png");
+    background-image: url("resources/image/Fondo4.png");
 }
 
 /* ===== Contenido centrado (hero) ===== */
